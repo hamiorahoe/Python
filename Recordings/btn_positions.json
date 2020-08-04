@@ -1,0 +1,62 @@
+[
+    {
+        "btn": "confirm",
+        "info": {
+            "time": 1.7369987964630127,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 1131,
+                "y": 1111
+            }
+        }
+    },
+    {
+        "btn": "yes",
+        "info": {
+            "time": 2.287001371383667,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 1232,
+                "y": 786
+            }
+        }
+    },
+    {
+        "btn": "delete",
+        "info": {
+            "time": 3.513000249862671,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 1436,
+                "y": 433
+            }
+        }
+    },
+    {
+        "btn": "pets",
+        "info": {
+            "time": 5.357000112533569,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 860,
+                "y": 504
+            }
+        }
+    },
+    {
+        "btn": "menu",
+        "info": {
+            "time": 10.166000843048096,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 2464,
+                "y": 683
+            }
+        }
+    }
+]
