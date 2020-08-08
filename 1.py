@@ -11,6 +11,7 @@ import multiprocessing
 import datetime
 import math
 import cv2 as cv
+import numpy as np
 from pynput import mouse
 
 class btnType():
@@ -324,7 +325,7 @@ def loop():
             time.sleep(1)
             start_rolling()
             time.sleep(1)
-            stop_thread=False
+            stop_thread = False
             for i in range(0,math.floor(SLEEP_TIME)):
                 if stop_thread:
                     return
@@ -415,7 +416,7 @@ def btnSpeedPlus_Click():
     global TIME_BETWEEN_COMMANDS
     global lblSpeed
     if TIME_BETWEEN_COMMANDS >= 0.1:
-        TIME_BETWEEN_COMMANDS+=0.1
+        TIME_BETWEEN_COMMANDS += 0.1
         lblSpeed.config(text="Time between clicks: {:02.02f}s".format(TIME_BETWEEN_COMMANDS))
         update_window()
 
@@ -423,23 +424,27 @@ def btnSpeedMinus_Click():
     global TIME_BETWEEN_COMMANDS
     global lblSpeed
     if TIME_BETWEEN_COMMANDS > 0.1:
-        TIME_BETWEEN_COMMANDS-=0.1
+        TIME_BETWEEN_COMMAND -= 0.1
         lblSpeed.config(text="Time between clicks: {:02.02f}s".format(TIME_BETWEEN_COMMANDS))
         update_window()
 
 def isColourInArea(r, g, b, x, y):
 
-    pic = pyautogui.screenshot(region=(x-30,y-30,30,30))
+    pic = pyautogui.screenshot(region=(x-30, y-30, 30, 30))
 
-    cv.imshow("Search Area", pic)
+    #convert screenshot to numpy array for opencv to use
+    #cvImg = cv.cvtColor(np.array(pic), cv.COLOR_RGB2BGR)
+
+    #cv.imshow("Search Area", cvImg)
+    #cv.waitKey(0)
     width, height = pic.size
     start_time = time.time()
-    for w in range(0,width,5):
-        for h in range(0,height,5):
-            pr,pg,pb = pic.getpixel((w,h))
+    for w in range(0, width, 5):
+        for h in range(0, height, 5):
+            pr,pg,pb = pic.getpixel((w, h))
             #print("{} at {},{}. Colour = ({}, {}, {})".format(pixel,(x+1)-w,(y+1)-h,r,g,b))
-            if(isCloseEnough(pr,r) and isCloseEnough(pg,g) and isCloseEnough(pb,b)):
-                print("FOUND AFTER {} TRIES - elapsed: {}".format((w+1)*(h+1),time.time()-start_time))
+            if(isCloseEnough(pr, r) and isCloseEnough(pg, g) and isCloseEnough(pb, b)):
+                print("FOUND AFTER {} TRIES - elapsed: {}".format((w+1)*(h+1), time.time()-start_time))
                 return True
 
     
