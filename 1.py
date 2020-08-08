@@ -10,6 +10,7 @@ import threading
 import multiprocessing
 import datetime
 import math
+import cv2 as cv
 from pynput import mouse
 
 class btnType():
@@ -36,7 +37,7 @@ BUTTON_WIDTH = 40
 BUTTON_HEIGHT = 2
 CHECK_W = 7
 CHECK_H = 7
-CHECK_CONFIDENCE = 0.7
+CHECK_CONFIDENCE = 0.95
 
 #Global Variables
 window = None
@@ -430,6 +431,7 @@ def isColourInArea(r, g, b, x, y):
 
     pic = pyautogui.screenshot(region=(x-30,y-30,30,30))
 
+    cv.imshow("Search Area", pic)
     width, height = pic.size
     start_time = time.time()
     for w in range(0,width,5):
@@ -505,7 +507,6 @@ def delete_pets():
                 attempt += 1
                 if attempt > 6:
                     print("LEAVING AT PETS BUTTON")
-                    pause_between_commands()
                     break
             continue
         attempt = 0
@@ -515,7 +516,6 @@ def delete_pets():
             time.sleep(0.1)
             attempt += 1
             if attempt > 6:
-                pause_between_commands()
                 break
             showing = isColourInArea(r,g,b,x,y)
     
