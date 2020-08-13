@@ -27,7 +27,7 @@ TIME_BETWEEN_COMMANDS = 1
 REPORT_TIME = 10
 SLEEP_TIME = 900
 BUTTONS = {
-    btnType.MENU : {"x" : 2360, "y" : 661,"r":86,"g":181,"b":255}, 
+    btnType.MENU : {"x" : 2360, "y" : 661, "r" : 86, "g" : 181, "b" : 255}, 
     btnType.PETS : {"x" : 849, "y" : 471,"r":255,"g":145,"b":86},
     btnType.DELETE: {"x" : 1395, "y" : 385,"r":255,"g":181,"b":109},
     btnType.YES : {"x" : 1077, "y" : 746,"r":0,"g":223,"b":160},
@@ -460,7 +460,7 @@ def isCloseEnough(num1, num2):
     else:
         return False
 
-def on_click(x,y,button,pressed):
+def on_click(x, y, button, pressed):
     global isPressed
     if pressed:
         print("Pressed")
