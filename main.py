@@ -3,7 +3,7 @@ import pyautogui
 import pydirectinput
 import pywinauto
 import time
-import recorder
+import Classes.recorder as recorder
 import os
 import json
 import threading
