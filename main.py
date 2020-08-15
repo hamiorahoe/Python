@@ -389,10 +389,14 @@ def btnTimePlus_Click(event):
     global SLEEP_TIME
     global lblWaitTime
     global isPressed
-    d  = 1
+    SLEEP_TIME += 1
+    lblWaitTime.config(text="Wait Time: {:02d}:{:02d}".format(math.floor(SLEEP_TIME/60), math.floor(SLEEP_TIME%60)))
+    update_window()
+    time.sleep(1)
+    d = 1
     while isPressed:
         if SLEEP_TIME > 0:
-            SLEEP_TIME+=d
+            SLEEP_TIME += d
             d += 0.2
             lblWaitTime.config(text="Wait Time: {:02d}:{:02d}".format(math.floor(SLEEP_TIME/60), math.floor(SLEEP_TIME%60)))
             update_window()
@@ -402,11 +406,15 @@ def btnTimeMinus_Click(event):
     global SLEEP_TIME
     global lblWaitTime
     global isPressed
+    SLEEP_TIME -= 1
+    lblWaitTime.config(text="Wait Time: {:02d}:{:02d}".format(math.floor(SLEEP_TIME/60), math.floor(SLEEP_TIME%60)))
+    update_window()
+    time.sleep(1)
     print("ISPRESSED: {}".format(isPressed))
     d = 1
     while isPressed:
         if SLEEP_TIME > 1:
-            SLEEP_TIME-=d
+            SLEEP_TIME -= d
             d+=0.2
             lblWaitTime.config(text="Wait Time: {:02d}:{:02d}".format(math.floor(SLEEP_TIME/60), math.floor(SLEEP_TIME%60)))
             update_window()
@@ -429,7 +437,7 @@ def btnSpeedMinus_Click():
         update_window()
 
 def isColourInArea(r, g, b, x, y):
-
+    """Check if specified colour is in specified area"""
     pic = pyautogui.screenshot(region=(x-30, y-30, 30, 30))
 
     #convert screenshot to numpy array for opencv to use
@@ -441,7 +449,7 @@ def isColourInArea(r, g, b, x, y):
     start_time = time.time()
     for w in range(0, width, 5):
         for h in range(0, height, 5):
-            pr,pg,pb = pic.getpixel((w, h))
+            pr, pg, pb = pic.getpixel((w, h))
             #print("{} at {},{}. Colour = ({}, {}, {})".format(pixel,(x+1)-w,(y+1)-h,r,g,b))
             if(isCloseEnough(pr, r) and isCloseEnough(pg, g) and isCloseEnough(pb, b)):
                 print("FOUND AFTER {} TRIES - elapsed: {}".format((w+1)*(h+1), time.time()-start_time))
