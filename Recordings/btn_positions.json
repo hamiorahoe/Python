@@ -1,61 +1,61 @@
 [
     {
-        "btn": "confirm",
+        "btn": "menu",
         "info": {
-            "time": 1.7369987964630127,
+            "time": 3.3339998722076416,
             "type": "click",
             "button": "Button.left",
             "pos": {
-                "x": 1131,
-                "y": 1111
+                "x": 1826,
+                "y": 510
+            }
+        }
+    },
+    {
+        "btn": "confirm",
+        "info": {
+            "time": 3.2461493015289307,
+            "type": "click",
+            "button": "Button.left",
+            "pos": {
+                "x": 844,
+                "y": 826
             }
         }
     },
     {
         "btn": "yes",
         "info": {
-            "time": 2.287001371383667,
+            "time": 2.536048650741577,
             "type": "click",
             "button": "Button.left",
             "pos": {
-                "x": 1232,
-                "y": 786
+                "x": 920,
+                "y": 591
             }
         }
     },
     {
         "btn": "delete",
         "info": {
-            "time": 3.513000249862671,
+            "time": 4.187065124511719,
             "type": "click",
             "button": "Button.left",
             "pos": {
-                "x": 1436,
-                "y": 433
+                "x": 1071,
+                "y": 322
             }
         }
     },
     {
         "btn": "pets",
         "info": {
-            "time": 5.357000112533569,
+            "time": 4.937030553817749,
             "type": "click",
             "button": "Button.left",
             "pos": {
-                "x": 860,
-                "y": 504
-            }
-        }
-    },
-    {
-        "btn": "menu",
-        "info": {
-            "time": 10.166000843048096,
-            "type": "click",
-            "button": "Button.left",
-            "pos": {
-                "x": 2464,
-                "y": 683
+                "x": 647,
+                "y": 393
             }
         }
     }

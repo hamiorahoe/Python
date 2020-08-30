@@ -28,10 +28,10 @@ REPORT_TIME = 10
 SLEEP_TIME = 900
 BUTTONS = {
     btnType.MENU : {"x" : 2360, "y" : 661, "r" : 86, "g" : 181, "b" : 255}, 
-    btnType.PETS : {"x" : 849, "y" : 471,"r":255,"g":145,"b":86},
-    btnType.DELETE: {"x" : 1395, "y" : 385,"r":255,"g":181,"b":109},
-    btnType.YES : {"x" : 1077, "y" : 746,"r":0,"g":223,"b":160},
-    btnType.CONFIRM : {"x" : 1047, "y" : 1056,"r":0,"g":223,"b":160}
+    btnType.PETS : {"x" : 849, "y" : 471, "r" : 255, "g" : 145, "b" : 86},
+    btnType.DELETE: {"x" : 1395, "y" : 385, "r" : 255, "g" : 181, "b" : 109},
+    btnType.YES : {"x" : 1077, "y" : 746, "r" : 0, "g" : 223, "b" : 160},
+    btnType.CONFIRM : {"x" : 1047, "y" : 1056, "r" : 0, "g" : 223, "b" : 160}
 }
 LOCATION_FILENAME = 'btn_positions'
 BUTTON_WIDTH = 40
@@ -233,7 +233,7 @@ def btn_callback(type):
         print("Can't find the window")    
     #   global errorLabel
     #   errorLabel.config(text="Couldn't find window 'Roblox'")
-    mouse_listener.start()
+    #mouse_listener.start()
     window.focus_force()
     window.wm_state('normal')
 
@@ -415,7 +415,7 @@ def btnTimeMinus_Click(event):
     while isPressed:
         if SLEEP_TIME > 1:
             SLEEP_TIME -= d
-            d+=0.2
+            d += 0.2
             lblWaitTime.config(text="Wait Time: {:02d}:{:02d}".format(math.floor(SLEEP_TIME/60), math.floor(SLEEP_TIME%60)))
             update_window()
             time.sleep(0.1)
@@ -432,7 +432,7 @@ def btnSpeedMinus_Click():
     global TIME_BETWEEN_COMMANDS
     global lblSpeed
     if TIME_BETWEEN_COMMANDS > 0.1:
-        TIME_BETWEEN_COMMAND -= 0.1
+        TIME_BETWEEN_COMMANDS -= 0.1
         lblSpeed.config(text="Time between clicks: {:02.02f}s".format(TIME_BETWEEN_COMMANDS))
         update_window()
 

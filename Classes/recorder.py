@@ -28,7 +28,8 @@ class recorder():
 
         script_dir = os.path.dirname(__file__)
         filepath = os.path.join(
-            script_dir, 
+            script_dir,
+            '..', 
             'Recordings', 
             '{}.json'.format(OUTPUT_FILENAME)
         )
